@@ -59,6 +59,16 @@ function Book( result ){
 
 }
 
+server.get( '*',( req,res ) =>{
+
+  let errObj = {
+    status: 500,
+    responseText: 'Sorry, something went wrong'
+  };
+  res.status( 500 ).send( errObj );
+
+} );
+
 
 server.listen( PORT, ()=>{
   console.log( `Listening on port ${PORT}` );
