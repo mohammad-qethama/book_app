@@ -1,0 +1,26 @@
+body {
+    /* /* display: grid;
+    grid-template-rows: 1fr 6fr 1fr;
+    row-gap: 60px; */
+    background-color: #aaa; 
+}
+
+.books{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+.divbooks {
+    width:380px;
+    height: 400px;
+    padding: 30px;
+    text-align: center;
+    border: 1px solid black;
+    box-shadow: 2px 2px 2px 2px #000;
+    margin: 6px;
+    overflow: scroll;
+    background-color: #efefef;
+
+}
