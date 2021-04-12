@@ -1,0 +1,109 @@
+
+form{
+    display: flex;
+    flex-flow: column;
+
+    background:inherit;
+    
+    width: 300px;
+    margin: auto;
+    padding: 30px;
+}
+
+header{
+    background-color: black;
+ 
+}
+h1 {
+    color:#ffffff;
+    font-size: 20px;
+    padding: 10px;
+
+}
+header > div{
+    color: #ccc;
+    text-align: center;
+    background: #95909059;
+}
+footer {
+    background-color: black;
+    height: 2em;
+}
+
+#search{
+    padding: 1em;
+    margin: 5px;
+    border-radius: 5px;
+    width: 100%;
+
+}
+
+.options{
+    padding: 1em;
+    border-radius: 5px;
+    background-color: #eee;
+    margin: 5px;
+    width: 100%;
+}
+
+
+input[type="radio"]  {
+  
+    width: 10px;
+    height: 10px;
+    border: black solid ;
+    border-radius: 1px;
+    background-color: white;
+  }
+  
+  input[type="radio"]:checked  {
+    
+    background-color: black;
+     
+     
+    }
+
+    button,a{
+        padding: 1em;
+        border-radius: 5px;
+        background-color: #000;
+        margin: 5px;
+        width: clamp( 100px , 100% , 400px);
+        color: #ddd;
+        text-align: center;
+        
+    }
+
+    a{
+        display: block;
+        margin: auto;
+        padding: 0;
+    }
+
+ .btitle{
+    padding: 10px;
+    font-weight: 700;
+    overflow:scroll;
+}
+
+.bauthor{
+    padding: 10px;
+
+    overflow:scroll;
+    font-weight: 400;
+}
+img{
+    width: 12em;
+
+}
+
+.btitle1{
+    padding: 10px;
+    font-weight: 700;
+    overflow:scroll;
+    color: #000;
+    background-color: #ccc;
+    text-align: center;
+    padding: 10px;
+    font-size: 3em;
+}
