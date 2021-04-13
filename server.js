@@ -5,9 +5,12 @@ require( 'dotenv' ).config();
 const express =  require( 'express' );
 const server = express();
 const superagent = require( 'superagent' );
+const pg = require( 'pg' );
 const path = require( 'path' );
 
+
 const PORT = process.env.PORT || 3030;
+const client = new pg.Client( process.env.DATABASE_URL );
 server.set( 'views', path.join( __dirname, '/views/pages' ) );
 server.set( 'view engine','ejs' );
 server.use( express.static( './public/' ) );
@@ -19,7 +22,18 @@ server.post( '/searches',handelBooks );
 
 function handleHome( req,res ){
 
-  res.render( 'index.ejs' );
+  let SQL = 'SELECT * FROM books;';
+
+  client.query( SQL )
+    .then( booksDB =>{
+      console.log( booksDB );
+
+      res.render( 'index.ejs',{booksArr:booksDB.rows} );
+    } ).catch(
+      err=> {res.send( err );} );
+
+
+
 }
 
 function newSearch( req,res ){
@@ -69,7 +83,7 @@ server.get( '*',( req,res ) =>{
 
 } );
 
-
-server.listen( PORT, ()=>{
-  console.log( `Listening on port ${PORT}` );
-} );
+client.connect()
+  .then( () => {
+    server.listen( PORT, () => console.log( `Listening on port: ${PORT}` ) );
+  } );
