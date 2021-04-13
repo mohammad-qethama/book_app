@@ -31,7 +31,7 @@ function handelBooks( req,res ){
   let dataUsedArray = [];
   let search = req.body.search;
   let term = req.body.searchOption;
-  let url = `https://www.googleapis.com/books/v1/volumes?q=${search}+${term}`;
+  let url = `https://www.googleapis.com/books/v1/volumes?q=+${term}:${search}`;
   superagent.get( url )
     .then( data =>{
       let dataUsed = data.body.items;
@@ -52,7 +52,7 @@ function Book( result ){
   if( result.volumeInfo.authors ){
     this.authors = result.volumeInfo.authors.join( ' , ' );
   }else{this.authors = 'N/A'; }
-  this.img = result.volumeInfo.imageLinks.thumbnail || 'N/A';
+  this.img = ( result.volumeInfo.imageLinks ) ? result.volumeInfo.imageLinks.thumbnail : 'https://i.imgur.com/J5LVHEL.jpg';
   this.description = result.volumeInfo.description || 'N/A' ;
 
 
