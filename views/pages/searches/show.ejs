@@ -11,7 +11,7 @@
 <body>
     <header> 
         <header> 
-            <h1>Best Books</h1>
+            <%- include('../../layout/header')  %> 
             <div><p>Search Result</p></div>
         </header>
 
@@ -22,8 +22,20 @@
         <img src= <%=book.img %> alt="">
          <p class="btitle"> <%= book.title %></p>
          <p class= 'bauthor'> <%= book.authors %> </p>
-
          <p> <%= book.description %> </p>
+         <form action="/books" method="POST"> 
+            <input type="text" name="image_url" id="image_url" value="<%=book.img %>"  hidden>
+             <input type="text" name="title" id= "title"  value=" <%= book.title %>"  hidden> 
+             <input type="text" name="author" id="author"  value=" <%= book.authors %>"  hidden>
+             <input type="text" name="description" id="description" value=" <%= book.description%>" hidden>
+             <input type="text" name="isbn" id="isbn" value=" <%= book.isbn %>"  hidden>
+             <input type="text" name="categories" id="categories"value=" <%= book.categories%>"  hidden>
+            
+             <button>Select This Book</button>
+          
+         </form>
+
+        
 
         
         </div>
