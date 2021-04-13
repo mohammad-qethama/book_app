@@ -13,62 +13,62 @@ just open the website.
 
 ## Architecture
 languages (HTML ,CSS ,JS).
-other technologies (express, nodejs , npm , superagent , dotenv , )
+other technologies (express, nodejs , npm , superagent , dotenv , postgresql)
 <!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
 
 ## Change Log
 04-12-2021 11:30pm - Application now has an 'almost' functional express server, with GET and POST routes for the book resource.
-
+04-13-2021 9:20 pm - Application now uses database and and additional details pages was deployed
+ 
 **** 
 
 
-Number and name of feature: #1 Setup:Proof of life
+Number and name of feature: #1 Books on hompage
 
-Estimate of time needed to complete: 15mins
+Estimate of time needed to complete: 2 hours 
 
-Start time: 3:40 pm
-
-Finish time: 4:00 pm
-
-Actual time needed to complete: 20 mins
-
-****
-
-Number and name of feature: #2 Google Books API
-
-Estimate of time needed to complete:15 mins
-
-Start time: 4:00 pm
+Start time: 2:50 pm
 
 Finish time: 5:00 pm
 
-Actual time needed to complete:1  Hours
+Actual time needed to complete: 2 hours 10 mins
 
 ****
 
-Number and name of feature: #3 error + homepage
+Number and name of feature: #2 Detailed Books information
 
-Estimate of time needed to complete: 15 mins
+Estimate of time needed to complete:1 hour
 
 Start time: 5:00 pm
 
-Finish time: 5:10 pm
+Finish time: 6:30 pm
 
-Actual time needed to complete: 10 mins
-
-****
-
-
+Actual time needed to complete:1  Hour 30 mins
 
 ****
 
-Number and name of feature: #3 rendering + CSS 
+Number and name of feature: #3 Save Searches
 
-Estimate of time needed to complete:2 hours 
+Estimate of time needed to complete: 2 hours
 
-Start time: 5:30 pm
+Start time: 6:30 pm
 
-Finish time: 11:30 pm
+Finish time: 9:20 pm
 
-Actual time needed to complete: 6 hours
+Actual time needed to complete: 2 hours
+
+****
+
+****
+
+Number and name of feature: #4 SMACSS and EJS components
+
+Estimate of time needed to complete: 20 mins
+
+Start time: 9:00pm
+
+Finish time: 9:40 pm
+
+Actual time needed to complete: 2 hours
+
 ****

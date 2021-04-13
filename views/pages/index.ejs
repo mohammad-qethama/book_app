@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/styles.css">
+    <%- include('../layout/head')  %> 
   
     <title>Document</title>
 </head>
 <body>
- <header> 
+
     <header> 
-        <h1>Best Books</h1>
+        <%- include('../layout/header')  %> 
         <div><p><%=booksArr.length %> Saved Books</p></div>
     </header>
 
@@ -22,13 +19,12 @@
          <p class="btitle"> <%= book.title %></p>
          <p class= 'bauthor'> <%= book.author %> </p>
 
-         <button> View Details</button>
+         <a href="/books/<%=book.id %>">View Details</a>
 
         
         </div>
     <% }) %>
 
-    <a href ='/searches/new'  >Start</a>
     </main>
     
  
