@@ -7,14 +7,21 @@ const server = express();
 const superagent = require( 'superagent' );
 const pg = require( 'pg' );
 const path = require( 'path' );
+const methodOverride = require( 'method-override' );
+
+
 
 
 const PORT = process.env.PORT || 3030;
+// const client = new pg.Client( process.env.DATABASE_URL );
+
 const client = new pg.Client( { connectionString: process.env.DATABASE_URL , ssl: { rejectUnauthorized: false }} );
 server.set( 'views', path.join( __dirname, '/views/pages' ) );
 server.set( 'view engine','ejs' );
-server.use( express.static( './public/' ) );
 server.use( express.urlencoded( {extended:true} ) );
+server.use( express.static( './public/' ) );
+server.use( methodOverride( '_method' ) );
+
 
 server.get( '/', handleHome );
 server.get( '/searches/new', newSearch );
@@ -22,6 +29,10 @@ server.post( '/searches',handelBooks );
 server.get( '/books/:id',detailedBooks );
 
 server.post( '/books' , bookChosen );
+
+server.put( '/books/:id',handelUpdate );
+
+server.delete( '/books/:id',handelDelete );
 
 function handleHome( req,res ){
 
@@ -94,6 +105,25 @@ function bookChosen( req,res ){
     } );
 
 
+}
+
+function handelUpdate( req,res ){
+  let SQL = 'UPDATE books SET author=$1,title=$2,isbn=$3,categories=$4,image_url=$5,description=$6 WHERE id=$7';
+  let safeValues = [req.body.author , req.body.title , req.body.isbn,req.body.categories, req.body.image_url, req.body.description , req.params.id];
+  client.query( SQL,safeValues )
+    .then( ()=>{
+      res.redirect( `/books/${req.params.id}` );
+    } );
+
+}
+
+function handelDelete( req,res ){
+  let SQL = 'DELETE  FROM books WHERE id =$1';
+  let safeValue = [req.params.id];
+  client.query( SQL,safeValue )
+    .then( ()=>{
+      res.redirect( '/' );
+    } );
 }
 
 

@@ -1,0 +1,13 @@
+<section id="editForm" >
+    <form action="/books/<%= book.id %>?_method=PUT" method="POST"> 
+      <input type="text" name="image_url" id="image_url" value="<%=book.image_url %>"  >
+       <input type="text" name="title" id= "title"  value=" <%= book.title %>"  > 
+       <input type="text" name="author" id="author"  value=" <%= book.author %>"  >
+       <textarea name="description" cols="30" rows="10"><%= book.description  %></textarea>
+       <input type="text" name="isbn" id="isbn" value=" <%= book.isbn %>"  >
+       <input type="text" name="categories" id="categories"value=" <%= book.categories%>"  >
+      
+       <button class = 'leftBut' id="updateBook">Update Book</button>
+    
+   </form>
+  </section>

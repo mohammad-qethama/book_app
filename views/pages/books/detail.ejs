@@ -8,6 +8,12 @@
 
       <p>Bookshelf: <%= book.categories %></p>  
 
+      <form action="/books/<%= book.id %>?_method=delete" method="POST">
+        <button id='deleteBtn'>Delete</button>
+      </form>
+      <button id='updateBtn'>Update Details</button>
+
+
     </div>
 
 
